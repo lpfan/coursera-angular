@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .message_state_green input { border: 1px solid green; }
+      .message_state_red input { border: 1px solid red; }
+      .message_state_green span { color: green; }
+      .message_state_red span { color: red; }
+    </style>
+    <script src="js/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+<body ng-app="LunchCheck">
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group message_state_{{informState}}">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control"
+             ng-model="lunchMenu">
+         </div>
+         <div class="form-group">
+             <button ng-click="checkMenuItems()" class="btn btn-default">Check If Too Much</button>
+         </div>
+         <div class="form-group message message_state_{{informState}}">
+           <span>
+             {{informMessage}}
+           </span>
+           <!-- Your message can go here. -->
+         </div>
+   </div>
+
+</body>
+</html>
