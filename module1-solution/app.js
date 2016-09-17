@@ -7,9 +7,9 @@
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController($scope){
-    $scope.lunchMenu = "";
-    $scope.informMessage = "";
-    $scope.informState = "";
+    $scope.lunchMenu = '';
+    $scope.informMessage = '';
+    $scope.informState = '';
     var lunchMenuItems = [];
 
     $scope.checkMenuItems = function () {
@@ -19,14 +19,13 @@
           return;
         }
 
+        $scope.informState = 'green';
         lunchMenuItems = $scope.lunchMenu.split(',');
 
         if (lunchMenuItems.length <= 3) {
           $scope.informMessage = 'Enjoy!';
-          $scope.informState = 'green';
         } else {
           $scope.informMessage = 'Too much!';
-          $scope.informState = 'red';
         }
 
     };
