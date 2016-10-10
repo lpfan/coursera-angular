@@ -1,0 +1,14 @@
+<div class="row" ng-repeat="menuitem in $ctrl.items" >
+  <div class=col-md-2>
+    <strong>{{menuitem.price_large}}</strong><span class="glyphicon glyphicon-usd"></span>
+  </div>
+  <div class="col-md-10">
+    <em>{{menuitem.name}}</em>
+      <p>
+        {{menuitem.short_name}}
+      </p>
+      <p class="bg-success">
+        {{menuitem.description}}
+      </p>
+  </div>
+<div>
